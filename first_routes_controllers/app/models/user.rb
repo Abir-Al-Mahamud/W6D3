@@ -1,4 +1,10 @@
 class User < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true
+  validates :username, presence: true, uniqueness: true
+
+  has_many :artworks,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Artwork
+
+    
 end
