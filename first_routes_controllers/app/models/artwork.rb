@@ -5,5 +5,9 @@ class Artwork < ApplicationRecord
         class_name: :User,
         optional: true
     
+    has_many :artwork_shares
+        primary_key: :id,
+        foreign_key: :artwork_id,
+        class_name: :ArtworkShare
 
 end
