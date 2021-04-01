@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   # patch 'users/:id', to: 'users#update'
   # delete 'users/:id', to: 'users#destroy'
   
-  resources :users
+  resources :users, only: [:create, :destroy, :index, :show, :update]
+  resources :artworks, only: [:create, :destroy, :index, :show, :update]
 end
